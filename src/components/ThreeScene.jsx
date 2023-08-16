@@ -18,6 +18,9 @@ const ThreeScene = () => {
         const textureLoader = new THREE.TextureLoader();
         const texture = textureLoader.load('/textures/earthmap.jpeg');
         const displacementMap = textureLoader.load('/textures/earthbump.jpeg');
+        const mountainDisplacement = textureLoader.load('/textures/crust2.jpg');
+        const crust = textureLoader.load('/textures/crust.jpg');
+
         const circleGeometry = new THREE.CircleGeometry(1, 32);
         // const earthMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00, roughness: 0.5, metalness: 0.7 });
         // const earthDisk = new THREE.Mesh(circleGeometry, material);
@@ -28,17 +31,7 @@ const ThreeScene = () => {
             roughness: 0.5,
             metalness: 0.7 });
 
-            // const displacementMap = textureLoader.load('/textures/earthbump.jpeg');
-            // const geometry = new THREE.RingGeometry(0, 2, 32);
-            // const material = new THREE.MeshStandardMaterial({  map: texture,  displacementMap: displacementMap,
-            //     displacementScale: 0.5, // Adjust the scale of the displacement effect
-            //     roughness: 0.5,
-            //     metalness: 0.7,side: THREE.DoubleSide });
-            // const ringMesh = new THREE.Mesh(geometry, material)
-            // ringMesh.rotation.x = Math.PI / 2;
-            // scene.add(ringMesh);
-     
-            // Create a 3D disk with thickness using ExtrudeGeometry
+
     const shape = new THREE.Shape();
     shape.absarc(0, 0, 1, 0, Math.PI * 2);
     
@@ -47,13 +40,7 @@ const ThreeScene = () => {
       depth: 0.2, // Adjust the thickness
       bevelEnabled: false,
     };
-    
-    // const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
-    // const material = new  THREE.MeshStandardMaterial({  map: texture,  displacementMap: displacementMap,   displacementScale: 0.5, // Adjust the scale of the displacement effect
-    // roughness: 0.5,
-    // metalness: 0.7 });
-    // const disk = new THREE.Mesh(geometry, material);
-    // disk.rotation.x = -Math.PI / 2;
+
     const cylinderGeometry = new THREE.CylinderGeometry(1, 1, 0.2, 32);
     const colors = [
         new THREE.Color('#000000'), // Material 0
@@ -64,11 +51,17 @@ const ThreeScene = () => {
     roughness: 0.5,
     metalness: 0.7 });
 
-    const material1 = new THREE.MeshBasicMaterial({ attach:"material-0", color:"#ff0000" })
-    const material2 = new THREE.MeshStandardMaterial({ attach:"material-1",   map: texture,  displacementMap: displacementMap,   displacementScale: 1, // Adjust the scale of the displacement effect
+    const material1 = new THREE.MeshBasicMaterial({ attach:"material-0", color:"gray" })
+    const material2 = new THREE.MeshStandardMaterial({ attach:"material-1",   map: texture,
+    bumpMap: displacementMap,
+    bumpScale: 0.1, // Adjust the bump intensity
     roughness: 0.5,
-    metalness: 0.7 });  
-    const material3 = new THREE.MeshBasicMaterial({ attach:"material-2", color:"#00ff00" })
+    metalness: 0.7,});  
+    const material3 = new THREE.MeshStandardMaterial({ attach:"material-2", color:"gray", map: crust,
+    displacementMap: mountainDisplacement,
+    bumpScale: 0.1, // Adjust the bump intensity
+    roughness: 0.5,
+    metalness: 0.7})
     const materials = [material1, material2, material3];
     const cylinder = new THREE.Mesh(cylinderGeometry, materials);
 
@@ -82,8 +75,8 @@ const ThreeScene = () => {
 
         const animate = () => {
             requestAnimationFrame(animate);
-            cylinder.rotation.x += 0.01
-            cylinder.rotation.y += 0.01;
+            // cylinder.rotation.x += 0.01
+            // cylinder.rotation.y += 0.01;
             renderer.render(scene, camera);
         };
 
