@@ -7,10 +7,12 @@ const ThreeScene = () => {
     // ...existing code...
     useEffect(() => {
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer();
+        const container = document.getElementById("threejs")
+        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
         camera.position.set(0, 1, 0);
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
         sceneRef.current.appendChild(renderer.domElement);
 
 
@@ -41,7 +43,7 @@ const ThreeScene = () => {
       bevelEnabled: false,
     };
 
-    const cylinderGeometry = new THREE.CylinderGeometry(1, 1, 0.2, 32);
+    const cylinderGeometry = new THREE.CylinderGeometry(1, 1, 0.06, 32);
     const colors = [
         new THREE.Color('#000000'), // Material 0
         new THREE.Color('#000000'), // Material 1
@@ -116,7 +118,7 @@ const ThreeScene = () => {
     // ...existing code...
 
 
-    return <div ref={sceneRef} />;
+    return <div ref={sceneRef}  />;
 };
 
 export default ThreeScene;
