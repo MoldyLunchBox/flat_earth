@@ -51,7 +51,8 @@ const ThreeScene = () => {
     roughness: 0.5,
     metalness: 0.7 });
 
-    const material1 = new THREE.MeshBasicMaterial({ attach:"material-0", color:"gray" })
+    const material1 = new THREE.MeshStandardMaterial({ attach:"material-0",  map: crust , roughness: 1,
+    metalness: 0})
     const material2 = new THREE.MeshStandardMaterial({ attach:"material-1",   map: texture,
     bumpMap: displacementMap,
     bumpScale: 0.1, // Adjust the bump intensity
@@ -71,12 +72,14 @@ const ThreeScene = () => {
     // scene.add(cylinder);
 
 
-        camera.position.z = 5;
-
+        camera.position.z = 2.5;
+        camera.position.y = 1;
+        camera.lookAt(0, 0, 0); // Adjust lookAt point
         const animate = () => {
             requestAnimationFrame(animate);
             // cylinder.rotation.x += 0.01
-            // cylinder.rotation.y += 0.01;
+            cylinder.rotation.y += 0.01;
+            
             renderer.render(scene, camera);
         };
 
@@ -90,21 +93,22 @@ const ThreeScene = () => {
         // Create a directional light
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(0, 1, 0); // Set the direction of the light
-        scene.add(directionalLight);
+        // scene.add(directionalLight);
 
         // spotlight
-        const spotLight = new THREE.SpotLight(0xffffff);
-        spotLight.position.set(0, 1, 2);
-        spotLight.castShadow = true;
+        const spotLightCrust = new THREE.SpotLight(0xffffff,5);
+        spotLightCrust.position.set(0, -1, 2);
+        spotLightCrust.castShadow = true;
+        
+    
 
-        spotLight.shadow.mapSize.width = 1024;
-        spotLight.shadow.mapSize.height = 1024;
+        const spotLightSurface = new THREE.SpotLight(0xffffff,5);
+        spotLightSurface.position.set(2, 2, -2);
+        spotLightSurface.castShadow = true;
+        
+ 
 
-        spotLight.shadow.camera.near = 500;
-        spotLight.shadow.camera.far = 4000;
-        spotLight.shadow.camera.fov = 30;
-
-        scene.add(spotLight);
+        scene.add(spotLightCrust, spotLightSurface);
         return () => {
             sceneRef.current.removeChild(renderer.domElement);
         };
