@@ -3,12 +3,19 @@ import './App.css';
 import ThreeScene from './components/ThreeScene';
 import { Home } from './components/sections/Home';
 import { Navbar } from './components/Navbar';
+import { GetInvolved } from './components/sections/GetInvolved';
 function App() {
   return (
     
-    <div  className="flex flex-col w-full p-5 h-[100vh] bg-gradient-to-r from-[#1e293b]  to-black ">
-        <Navbar />
+    <div  className=" flex overflow-hidden flex-col w-full h-full  ">
+      <div className='h-screen z-1 relative flex flex-col bg-gradient-to-t from-[#1e293b]  to-black'>
+       
         <Home />
+      <div className='curve'></div>
+      </div>
+      <div className='h-screen -z-10 bg-[#166534] flex flex-col'>
+        <GetInvolved />
+        </div>
     </div>
   );
 }

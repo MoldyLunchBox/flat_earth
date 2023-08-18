@@ -3,7 +3,7 @@ import { navLinks } from './utils/constants/navLinks'
 
 export const Navbar = () => {
   return (
-    <div className='w-full flex py-6 justify-between items-center '>Navbar
+    <div className='w-full absolute bg-gradient-to-r rounded-xl from-black to-gray-800 flex py-6 justify-between items-center '>Navbar
     <ul className='list-none sm:flex flex-row justify-end items-center flex-1'>
     {
         navLinks.map((link, index)=>(
