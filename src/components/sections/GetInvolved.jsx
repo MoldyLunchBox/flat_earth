@@ -5,7 +5,7 @@ export const GetInvolved = () => {
 
     return (
 
-        <div className=' max-w-[1000px]  mx-auto '>
+        <div className='my-10 max-w-[1000px]   mx-auto '>
             <div className='flex    flex-col lg:flex-row h-full items-center space-y-4  lg:space-y-0 lg:space-x-4'>
 
                 <div className="flex relative p-4 flex-col h-full justify-center ">

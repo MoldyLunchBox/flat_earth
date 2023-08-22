@@ -10,18 +10,18 @@ function App() {
 
     <div className=" flex overflow-hidden  flex-col w-full h-full  ">
 
-      <section className='h-screen relative flex flex-col bg-gradient-to-t from-[#1e293b]  justify-center to-black'>
+      <section className='h-screen min-h-[1000px] relative flex flex-col bg-gradient-to-t from-[#1e293b]  justify-center to-black'>
         <Home />
         <div className='curve'></div>
       </section>
 
-      <section className='h-screen relative -z-10 bg-[#1e3a8a] flex flex-col  justify-center'>
+      <section className='h-screen min-h-[1000px] relative -z-10 bg-[#1e3a8a] flex flex-col  justify-center'>
         <GetInvolved />
         <div className='bubble justify-end '></div>
 
       </section>
 
-      <section className='h-screen dark   flex flex-col  justify-center '>
+      <section className='h-screen dark   min-h-[1000px] flex flex-col  justify-center '>
         <Statistics />
       </section>
     </div>

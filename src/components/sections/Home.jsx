@@ -4,7 +4,7 @@ import { Navbar } from '../Navbar'
 
 export const Home = () => {
     return (
-        <div className='relative w-full items-center h-full  '>
+        <div className='relative mb-10 w-full items-center h-full  '>
             <Navbar />
             <div className=' max-w-[1000px] h-full  mx-auto '>
             <div className='flex    flex-col lg:flex-row h-full items-center space-y-4  lg:space-y-0 lg:space-x-4'>
