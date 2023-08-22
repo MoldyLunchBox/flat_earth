@@ -74,7 +74,8 @@
   content: '';
   border-top-left-radius: 70% 100%;
   border-top-right-radius: 70% 100%;
-  
+  position: absolute;
+  bottom: 0;
   z-index: -1;
   width: 100%;
   background-color: #0f0f10;

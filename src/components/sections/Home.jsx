@@ -4,20 +4,27 @@ import { Navbar } from '../Navbar'
 
 export const Home = () => {
     return (
-        <div className='relative w-full items-center h-full space-x-4 '>
+        <div className='relative w-full items-center h-full  '>
             <Navbar />
-            <div className='flex  w-full flex-row h-full items-center space-x-4 '>
+            <div className=' max-w-[1000px] h-full  mx-auto '>
+            <div className='flex    flex-col lg:flex-row h-full items-center space-y-4  lg:space-y-0 lg:space-x-4'>
 
-                <div className='flex space-y-4 flex-col w-full h-1/2  justify-center  text-white '>
-                    <div className='text-3xl font-semibold bg-gradient-to-r text-transparent bg-clip-text from-[#4d7c0f] to-[#777777]'>Where's the Edge?</div>
+                <div className="flex relative p-4 flex-col h-full justify-center ">
+                    <h2 className="text-4xl font-bold text-white mb-4">Earth!</h2>
+                    <p className="text-white">
+                    Lost at the edge of the world?  where the world's a disc and laughter echoes endlessl? Don't worry, Join us at the horizon of hilarity, where laughter knows no curvature.
+                    </p>
+                    <button className="ml-auto   hidden lg:inline-block rounded-lg text-white px-4 py-2 text-lg  bg-gradient-to-r from-black to-gray-800  w-fit">Join us </button >
+                </div>
+                <div id="threejs"  className="  h-[50%]    w-full max-w-lg">
+                 <ThreeScene/>
 
-                    <div className='text-xl font-poppings '>Lost at the edge of the world?  where the world's a disc and laughter echoes endlessl? Don't worry, Join us at the horizon of hilarity, where laughter knows no curvature.</div>
-                    <button className="ml-auto rounded-lg px-4 py-2 text-lg  bg-gradient-to-r from-black to-gray-800  w-fit">Join us </button >
                 </div>
-                <div id="threejs" className='h-1/2   text-white w-full '>
-                    {/* <ThreeScene /> */}
-                </div>
+                    <button className=" lg:hidden rounded-lg  text-white px-4 py-2 text-lg  bg-gradient-to-r  from-black to-gray-800  w-fit">Join us </button >
             </div>
+        </div>
+
+       
         </div>
     )
 }

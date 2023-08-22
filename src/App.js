@@ -8,7 +8,8 @@ function App() {
   return (
 
     <div className=" flex overflow-hidden  flex-col w-full h-full  ">
-      <section className='h-screen relative flex flex-col bg-gradient-to-t from-[#1e293b]  to-black'>
+
+      <section className='h-screen relative flex flex-col bg-gradient-to-t from-[#1e293b]  justify-center to-black'>
         <Home />
         <div className='curve'></div>
       </section>
