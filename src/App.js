@@ -4,6 +4,7 @@ import ThreeScene from './components/ThreeScene';
 import { Home } from './components/sections/Home';
 import { Navbar } from './components/Navbar';
 import { GetInvolved } from './components/sections/GetInvolved';
+import { Statistics } from './components/sections/Statistics';
 function App() {
   return (
 
@@ -20,8 +21,8 @@ function App() {
 
       </section>
 
-      <section className='h-screen dark   flex flex-col'>
-        <GetInvolved />
+      <section className='h-screen dark   flex flex-col  justify-center '>
+        <Statistics />
       </section>
     </div>
   );
