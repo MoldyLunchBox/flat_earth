@@ -13,7 +13,7 @@ function App() {
         <div className='curve'></div>
       </section>
 
-      <section className='h-screen relative -z-10 bg-[#1e3a8a] flex flex-col justify-center'>
+      <section className='h-screen relative -z-10 bg-[#1e3a8a] flex flex-col  justify-center'>
         <GetInvolved />
         <div className='bubble justify-end '></div>
 
