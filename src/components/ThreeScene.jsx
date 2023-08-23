@@ -23,32 +23,15 @@ const ThreeScene = () => {
         const mountainDisplacement = textureLoader.load('/textures/crust2.jpg');
         const crust = textureLoader.load('/textures/crust.jpg');
 
-        const circleGeometry = new THREE.CircleGeometry(1, 32);
-        // const earthMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00, roughness: 0.5, metalness: 0.7 });
-        // const earthDisk = new THREE.Mesh(circleGeometry, material);
-
-        const earthGeometry = new THREE.RingGeometry(0, 2, 32);
-        const earthMaterial = new THREE.MeshStandardMaterial({  map: texture,  displacementMap: displacementMap,
-            displacementScale: 0.5, // Adjust the scale of the displacement effect
-            roughness: 0.5,
-            metalness: 0.7 });
-
+   
 
     const shape = new THREE.Shape();
     shape.absarc(0, 0, 1, 0, Math.PI * 2);
     
-    const extrudeSettings = {
-      steps: 1,
-      depth: 0.2, // Adjust the thickness
-      bevelEnabled: false,
-    };
+
 
     const cylinderGeometry = new THREE.CylinderGeometry(1, 1, 0.06, 32);
-    const colors = [
-        new THREE.Color('#000000'), // Material 0
-        new THREE.Color('#000000'), // Material 1
-        new THREE.Color('#000000'), // Material 5
-      ];
+
     const material = new THREE.MeshStandardMaterial({ map: texture,  displacementMap: displacementMap,   displacementScale: 0.5, // Adjust the scale of the displacement effect
     roughness: 0.5,
     metalness: 0.7 });
@@ -74,8 +57,8 @@ const ThreeScene = () => {
     // scene.add(cylinder);
 
 
-        camera.position.z = 2.5;
-        camera.position.y = 1;
+        camera.position.z = 1.8;
+        camera.position.y = 0.5;
         camera.lookAt(0, 0, 0); // Adjust lookAt point
         const animate = () => {
             requestAnimationFrame(animate);
