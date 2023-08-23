@@ -6,8 +6,6 @@ import { Navbar } from './components/Navbar';
 import { GetInvolved } from './components/sections/GetInvolved';
 import { Statistics } from './components/sections/Statistics';
 import { BigStats } from './components/BigStats'
-import Particles from 'react-tsparticles';
-import { ParticlesContainer } from './components/ParticlesContainer';
 import { SvgWave } from './components/SvgWave';
 import { ContactMe } from './components/sections/ContactMe';
 import { SvgWaves } from './components/SvgWaves';

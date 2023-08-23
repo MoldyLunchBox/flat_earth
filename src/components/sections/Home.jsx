@@ -28,7 +28,7 @@ export const Home = () => {
                         <button className="ml-auto   hidden lg:inline-block rounded-lg text-white px-4 py-2 text-lg  bg-gradient-to-r from-black to-gray-800  w-fit">Join us </button >
                     </div>
                     <div id="threejs" className="  h-[500px]  bg-white   w-full max-w-lg">
-                        {/* <ThreeScene/> */}
+                        <ThreeScene/>
 
                     </div>
                     <button className=" lg:hidden rounded-lg  text-white px-4 py-2 text-lg  bg-gradient-to-r  from-black to-gray-800  w-fit">Join us </button >
