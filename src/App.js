@@ -10,31 +10,38 @@ import Particles from 'react-tsparticles';
 import { ParticlesContainer } from './components/ParticlesContainer';
 import { SvgWave } from './components/SvgWave';
 import { ContactMe } from './components/sections/ContactMe';
+import { SvgWaves } from './components/SvgWaves';
+import { SvgSide } from './components/SvgSide';
 
 function App() {
   return (
 
     <div className=" flex overflow-hidden  flex-col w-full h-full  ">
-
-      <section className='h-screen min-h-[1000px] relative flex flex-col bg-gradient-to-t from-[#1e293b]  justify-center to-black'>
+      <Navbar />
+      {/* home */}
+      <section id="home" className='h-full min-h-screen relative flex flex-col bg-gradient-to-t from-[#1e293b]  justify-center to-black'>
         <Home />
-        <div className='curve'></div>
       </section>
-
-      <section className='h-screen min-h-[1000px] relative -z-10 bg-[#1e3a8a] flex flex-col  justify-center'>
+      {/* get involved */}
+      <section id="getInvolved" className='h-screen  min-h-[1000px] relative bg-[#4078D4] flex flex-col  justify-center'>
+        <SvgWaves />
+        <div className="rain-container -z-4 absolute">
+          <div className="rain"></div>
+        </div>
         <GetInvolved />
-        <div className='bubble justify-end '></div>
-
+        <SvgSide />
       </section>
-
-      <section className='relative h-full dark   min-h-[1000px] flex flex-col  justify-center '>
+      {/* statistics */}
+      <section id="crisis" className='relative h-full dark   min-h-screen flex flex-col  justify-center '>
         <Statistics />
         <BigStats />
       </section>
-      <section className='relative  text-white bg-[#9A9AF0] min-h-[screen]     '>
-        
+      {/* contact us */}
+      <section id="contact" className='relative h-full my-auto text-white bg-[#9A9AF0] min-h-screen   '>
         <SvgWave />
-<ContactMe/>
+        <div className='h-screen flex items-center my-auto justify-center'>
+          <ContactMe />
+        </div>
 
       </section>
     </div>
