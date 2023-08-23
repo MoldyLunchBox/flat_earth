@@ -5,7 +5,7 @@ import SvgForrest from '../SvgForrest'
 
 export const Statistics = () => {
     return (
-        <div className='max-w-[1000px] p-5  my-10 mx-auto'>
+        <div className='max-w-[1000px] p-5    mx-auto'>
             <div className='flex flex-col lg:flex-row h-full items-center space-y-4  lg:space-y-0 lg:space-x-4'>
                 <div className=" bg-base-200 justify-center text-center">
                     <div className="hero-content flex-col lg:flex-row">

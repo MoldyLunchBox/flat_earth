@@ -9,6 +9,7 @@ import { BigStats } from './components/BigStats'
 import Particles from 'react-tsparticles';
 import { ParticlesContainer } from './components/ParticlesContainer';
 import { SvgWave } from './components/SvgWave';
+import { ContactMe } from './components/sections/ContactMe';
 
 function App() {
   return (
@@ -27,15 +28,14 @@ function App() {
       </section>
 
       <section className='relative h-full dark   min-h-[1000px] flex flex-col  justify-center '>
-      <ParticlesContainer />
-       
         <Statistics />
-      <BigStats/>
+        <BigStats />
       </section>
-      <section className='relative h-full  text-white bg-[#9A9AF0] min-h-[1000px] flex flex-col  justify-center '>
-      <SvgWave />
+      <section className='relative  text-white bg-[#9A9AF0] min-h-[screen]     '>
+        
+        <SvgWave />
+<ContactMe/>
 
- 
       </section>
     </div>
   );
