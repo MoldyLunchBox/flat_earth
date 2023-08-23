@@ -29,6 +29,7 @@ Flat Earth Saviors is a fun and creative landing page built with ReactJS that ai
    ```bash
    git clone https://github.com/your-username/flat-earth-saviors.git
 
+## Usage
 
 In the project directory, you can run:
 
