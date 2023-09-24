@@ -32,9 +32,6 @@ const ThreeScene = () => {
 
     const cylinderGeometry = new THREE.CylinderGeometry(1, 1, 0.06, 32);
 
-    const material = new THREE.MeshStandardMaterial({ map: texture,  displacementMap: displacementMap,   displacementScale: 0.5, // Adjust the scale of the displacement effect
-    roughness: 0.5,
-    metalness: 0.7 });
 
     const material1 = new THREE.MeshStandardMaterial({ attach:"material-0",  map: crust , roughness: 1,
     metalness: 0})
